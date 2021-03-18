@@ -5,7 +5,7 @@ const cors = require('cors')
 const { json, urlencoded } = express
 require('dotenv').config();
 
-const PORT = 3000
+const PORT = 8080
 const HOST = "0.0.0.0"
 
 const app = express()
