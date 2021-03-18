@@ -3,6 +3,7 @@ const ToneAnalyzerV3 = require('ibm-watson/tone-analyzer/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
 const cors = require('cors')
 const { json, urlencoded } = express
+require('dotenv').config();
 
 const PORT = 3000
 const HOST = "0.0.0.0"
@@ -15,15 +16,15 @@ const corsOptions = { origin: '*', optionsSuccessStatus: 200 }
 app.use(cors(corsOptions))
 
 app.get('/', function (req, res) {
-	res.send("jalando");
+	res.send("nuevo try");
 });
 
 const toneAnalyzer = new ToneAnalyzerV3({
   version: '2017-09-21',
   authenticator: new IamAuthenticator({
-    apikey: 'm7yJzVHsDm_YckLDnMqG2yNkkWyf4UO4mhYBeEAv6HqC',
+    apikey: process.env.TONE_ANALYZER_IAM_APIKEY,
   }),
-  serviceUrl: 'https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/8b56da32-908d-48dc-ace0-aee45288a1fe',
+  serviceUrl: process.env.TONE_ANALYZER_URL,
 });
 
 app.post('/ricardo-salas', function (req, res) {
