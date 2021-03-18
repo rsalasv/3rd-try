@@ -16,7 +16,7 @@ const corsOptions = { origin: '*', optionsSuccessStatus: 200 }
 app.use(cors(corsOptions))
 
 app.get('/', function (req, res) {
-	res.send("nuevo try");
+	res.send("Ya funciona con las credenciales en un .env");
 });
 
 const toneAnalyzer = new ToneAnalyzerV3({

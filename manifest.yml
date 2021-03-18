@@ -1,0 +1,5 @@
+---
+applications:
+  - name: RicardoSalas2
+    instances: 1
+    memory: 256M
